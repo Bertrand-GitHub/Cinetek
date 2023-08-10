@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class detailsMovieController {
 
-    @GetMapping({ "/details"})
+    @GetMapping({ "/detailsMovie"})
     public String Insert() {
 
         return "details";
