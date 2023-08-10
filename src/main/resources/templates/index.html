@@ -10,6 +10,16 @@
     <main>
         <div>
             <h1>LISTE DES FILMS</h1>
+
+            <h1>Liste des personnes :</h1>
+
+            <table>
+                <tr th:each="movies: ${movies}">
+                    <td th:text="${movies}" /> </td>
+                    <td> coucou</td>
+
+                </tr>
+            </table>
         </div>
         <div>
             <table class="table table-hover">
@@ -24,6 +34,10 @@
                 </tr>
                 </thead>
                 <tbody>
+                <tr th:each="movies: ${movies}">
+                    <td th:text="${movies}" /> </td>
+                    <td> coucou</td>
+                </tr>
                 <tr class="table-dark">
                     <th scope="row"><a href="/detailsMovie">Titre</a></th>
                     <td>Column content</td>
