@@ -9,6 +9,6 @@ public class detailsMovieController {
     @GetMapping({ "/detailsMovie"})
     public String Insert() {
 
-        return "details";
+        return "detailsMovie";
     }
 }
