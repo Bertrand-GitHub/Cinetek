@@ -19,4 +19,15 @@ public class MoviesServiceImpl implements MoviesService{
     public List<Movie> selectMovies() {
         return this.movieDAO.selectMovies();
     }
+    @Override
+    public Movie findMovieById(int id) {
+        return null;
+    }
+
+    @Override
+    public void addMovie(Movie movie) {
+
+    }
+
+
 }
