@@ -28,7 +28,6 @@
                 </thead>
                 <tbody>
                 <tr class="table-dark" th:each="movies: ${movies}">
-                    <span th:text="${movies}"></span>
                     <th scope="row" >
                         <a th:href="'details/' + ${movies.movieId}">
                             <span th:text="${movies.title}"></span>
