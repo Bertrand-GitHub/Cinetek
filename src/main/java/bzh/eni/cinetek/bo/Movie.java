@@ -1,7 +1,6 @@
 package bzh.eni.cinetek.bo;
 
-import java.time.LocalDate;
-import java.util.Date;
+import java.util.List;
 
 public class Movie {
     private int movieId;
@@ -9,19 +8,19 @@ public class Movie {
     private int releaseDate;
     private int duration;
     private String director;
-    String actor;
+    private List<Participant> actors;
     private String synopsis;
 
     public Movie() {
     }
-    public Movie(int movieId, String title, int releaseDate, int duration, String director, String actors, String synopsis) {
+    public Movie(int movieId, String title, int releaseDate, int duration, String director, List<Participant> actors, String synopsis) {
         super();
         this.movieId = movieId;
         this.title = title;
         this.releaseDate = releaseDate;
         this.duration = duration;
         this.director = director;
-        this.actor = actors;
+        this.actors = actors;
         this.synopsis = synopsis;
     }
 
@@ -66,12 +65,12 @@ public class Movie {
         this.director = director;
     }
 
-    public String getActor() {
-        return actor;
+    public List<Participant> getActors() {
+        return actors;
     }
 
-    public void setActor(String actor) {
-        this.actor = actor;
+    public void setActors(List<Participant> actors) {
+        this.actors = actors;
     }
 
     public String getSynopsis() {
@@ -89,7 +88,7 @@ public class Movie {
                 ", title='" + title + '\'' +
                 ", releaseDate=" + releaseDate +
                 ", director='" + director + '\'' +
-                ", actors='" + actor + '\'' +
+                ", actors='" + actors + '\'' +
                 ", synopsis='" + synopsis + '\'' +
                 '}';
     }
