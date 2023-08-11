@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
@@ -21,7 +19,14 @@ public class IndexController {
     @GetMapping({ "/", "/index"})
     public String afficherIndex(Model model) {
 
-        model.addAttribute("movies", this.moviesService.findMovie());
+        model.addAttribute("movies", this.moviesService.selectMovies());
         return "index";
+    }
+
+    @GetMapping("/deleteMovie")
+    public String deleteMovie(Model model){
+
+        model.addAttribute("movies", this.moviesService.selectMovies());
+        return "index" ;
     }
 }
