@@ -5,5 +5,8 @@ import bzh.eni.cinetek.bo.Movie;
 import java.util.List;
 
 public interface MoviesService {
-    public List<Movie> selectMovies();
+    List<Movie>selectMovies();
+    Movie findMovieById(int id);
+    void addMovie(Movie movie);
+
 }

@@ -92,4 +92,5 @@ public class Movie {
                 ", synopsis='" + synopsis + '\'' +
                 '}';
     }
+
 }
