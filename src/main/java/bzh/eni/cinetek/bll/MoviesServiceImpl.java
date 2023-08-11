@@ -16,7 +16,7 @@ public class MoviesServiceImpl implements MoviesService{
         this.movieDAO = movieDAO;
     }
     @Override
-    public List<Movie> findMovie() {
+    public List<Movie> selectMovies() {
         return this.movieDAO.selectMovies();
     }
 }
