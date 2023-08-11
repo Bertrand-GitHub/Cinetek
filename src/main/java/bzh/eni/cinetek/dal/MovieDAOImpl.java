@@ -9,14 +9,18 @@ import java.util.List;
 
 @Repository
 public class MovieDAOImpl implements MovieDAO {
+
     List<Movie> movies;
 
+    private PaticipantDaoImpl participantsDao;
 
-    public MovieDAOImpl(ParticipantDAOImpl participantDAO) {
-        List<Participant> participants;
-        participants = participantDAO.getParticipantsList();
+    public MovieDAOImpl(PaticipantDaoImpl participantsDao) {
+        this.participantsDao = participantsDao;
+
+        List<Participant> participants = participantsDao.selectParticipants();
+
+
         movies = new ArrayList<Movie>();
-
         movies.add(new Movie(1, "The Shawshank Redemption", 1994, 142, "Frank Darabont", Arrays.asList(participants.get(0), participants.get(1)), "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."));
         movies.add(new Movie(2, "The Godfather", 1972, 175, "Francis Ford Coppola", Arrays.asList(participants.get(2), participants.get(3)), "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."));
         movies.add(new Movie(3, "Pulp Fiction", 1994, 154, "Quentin Tarantino", Arrays.asList(participants.get(4), participants.get(5)), "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption."));
@@ -32,13 +36,24 @@ public class MovieDAOImpl implements MovieDAO {
         movies.add(new Movie(13, "The Big Lebowski", 1998, 117, "Joel Coen", Arrays.asList(participants.get(24), participants.get(25)), "Jeff 'The Dude' Lebowski, mistaken for a millionaire of the same name, seeks restitution for his ruined rug and enlists his bowling buddies to help get it."));
         movies.add(new Movie(14, "Blade Runner", 1982, 117, "Ridley Scott", Arrays.asList(participants.get(26), participants.get(27)), "A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator."));
         movies.add(new Movie(15, "The Breakfast Club", 1985, 97, "John Hughes", Arrays.asList(participants.get(28), participants.get(29)), "Five high school students meet in Saturday detention and discover how they have a lot more in common than they thought."));
+
     }
+
+    // ... Rest of your code
+
+    private List<Participant> getParticipants() {
+        return participantsDao.selectParticipants();    }
+
+
 
     @Override
     public List<Movie> selectMovies() {
-        List<Participant> participants = ParticipantDAOImpl;
+
+
         return movies;
     }
+
+
 
     @Override
     public void addMovie(Movie movie) {
