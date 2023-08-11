@@ -14,6 +14,13 @@ public class MovieDAOImpl implements MovieDAO {
 
     public MovieDAOImpl() {
 
+
+
+    }
+
+    @Override
+    public List<Movie> selectMovies() {
+
         List<Participant> participants = new ArrayList<>();
         participants.add(new Participant(1, "Tim", "Robbins", false, true));
         participants.add(new Participant(2, "Morgan", "Freeman", true, true));
@@ -56,7 +63,6 @@ public class MovieDAOImpl implements MovieDAO {
         participants.add(new Participant(39, "Arnold", "Schwarzenegger", false, true));
         participants.add(new Participant(40, "Linda", "Hamilton", false, true));
 
-
         movies = new ArrayList<Movie>();
         movies.add(new Movie(1, "The Shawshank Redemption", 1994, 142, "Frank Darabont", Arrays.asList(participants.get(0), participants.get(1)), "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."));
         movies.add(new Movie(2, "The Godfather", 1972, 175, "Francis Ford Coppola", Arrays.asList(participants.get(2), participants.get(3)), "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."));
@@ -74,11 +80,7 @@ public class MovieDAOImpl implements MovieDAO {
         movies.add(new Movie(14, "Blade Runner", 1982, 117, "Ridley Scott", Arrays.asList(participants.get(26), participants.get(27)), "A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator."));
         movies.add(new Movie(15, "The Breakfast Club", 1985, 97, "John Hughes", Arrays.asList(participants.get(28), participants.get(29)), "Five high school students meet in Saturday detention and discover how they have a lot more in common than they thought."));
 
-    }
-
-    @Override
-    public List<Movie> selectMovies() {
-        return null;
+        return movies;
     }
 
     @Override
